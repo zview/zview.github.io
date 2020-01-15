@@ -1,10 +1,48 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>苏轼关于写作的方法论</title>
+    <url>/2020/01/15/%E8%8B%8F%E8%BD%BC%E5%85%B3%E4%BA%8E%E5%86%99%E4%BD%9C%E7%9A%84%E6%96%B9%E6%B3%95%E8%AE%BA/</url>
+    <content><![CDATA[<h4 id="《文说》"><a href="#《文说》" class="headerlink" title="《文说》"></a>《文说》</h4><p>吾文如万斛泉源,不择地而出,在平地滔滔汩汩,虽一日千里无难。及其与山石曲折、随物赋形而不可知也。所可知者,常行于所当行,常止于不可不止,如是而已矣,其他虽吾亦不能知也。</p>
+<h4 id="《答谢民师书》"><a href="#《答谢民师书》" class="headerlink" title="《答谢民师书》"></a>《答谢民师书》</h4><p>近奉违，亟辱问讯，具审起居佳胜，感慰深矣！某受性刚简，学迂材下，坐废累年，不敢复齿缙绅。自还海北，见平生亲旧，惘然如隔世人，况与左右无一日之雅，而敢求交乎？数赐见临，倾盖如故，幸甚过望，不可言也。</p>
+<p>所示书教及诗赋杂文，观之熟矣。大略如行云流水，初无定质，但常行于所当行，常止于所不可不止，文理自然，姿态横生。孔子曰：“言之不文，行而不远。”又曰：“辞，达而已矣。”夫言止于达意，即疑若不文，是大不然。求物之妙，如系风捕影；能使事物了然于心者，盖千万人而不一遇也，而况能使了然于口与手者乎？是之谓辞达。辞至于能达，则文不可胜用矣。扬雄好为艰深之辞，以文浅易之说；若正言之，则人人知之矣。此正所谓“雕虫篆刻”者，其《太玄》《法言》皆是类也，而独悔于赋，何哉？终身雕篆而独变其音节，便谓之“经”，可乎？屈原作《离骚经》，盖《风》《雅》之再变者，虽与日月争光可也，可以其似赋而谓之“雕虫”乎？使贾谊见孔子，升堂有余矣；而乃以赋鄙之，至与司马相如同科。雄之陋如此比者甚众。可与知者道，难与俗人言也，因论文偶及之耳。欧阳文忠公言：“文章如精金美玉，市有定价，非人所能以口舌定贵贱也。”纷纷多言，岂能有益于左右，愧悚不已。</p>
+<p>所须惠力法雨堂字，轼本不善作大字，强作终不佳，又舟中局迫难写，未能如教。然轼方过临江，当往游焉。或僧有所欲记录，当为作数句留院中，慰左右念亲之意。今日至峡山寺，少留即去，愈远。惟万万以时自爱。不宣。</p>
+]]></content>
+      <categories>
+        <category>其他</category>
+      </categories>
+      <tags>
+        <tag>写作</tag>
+        <tag>苏轼</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>构建自己的分布式文件系统</title>
     <url>/2020/01/03/%E6%9E%84%E5%BB%BA%E8%87%AA%E5%B7%B1%E7%9A%84%E5%88%86%E5%B8%83%E5%BC%8F%E6%96%87%E4%BB%B6%E7%B3%BB%E7%BB%9F/</url>
-    <content><![CDATA[<p>在互联网应用中,文件系统扮演了越来越重要的角色。</p>
-<h2 id="文件系统的演进"><a href="#文件系统的演进" class="headerlink" title="文件系统的演进"></a>文件系统的演进</h2><h2 id="分布式文件系统"><a href="#分布式文件系统" class="headerlink" title="分布式文件系统"></a>分布式文件系统</h2><h2 id="FastDfs"><a href="#FastDfs" class="headerlink" title="FastDfs"></a>FastDfs</h2>]]></content>
+    <content><![CDATA[<p>早期谈到阿里技术实力的时候，经常提及两个：去IOE和LVS（现在可说的就多了）。</p>
+<p>IOE就是IBM、Oracle、EMC，EMC主要是指他的存储设备。</p>
+<p>在互联网应用中,文件系统扮演了越来越重要的角色。</p>
+<h3 id="文件系统的演进"><a href="#文件系统的演进" class="headerlink" title="文件系统的演进"></a>文件系统的演进</h3><p>大型互联网公司在发展过程中，文件系统都经历了从集中式存储到分布式存储的演进过程。  </p>
+<p>1.集中式存储  </p>
+<p>早期的是单机存储，应用、数据库、文件在一台机器；后期有专门的文件存储服务器。</p>
+<p>‘应用服务器需要处理大量的业务逻辑，因此需要更快更强大的CPU；</p>
+<p>‘数据库服务器需要快速磁盘检索和数据缓存，因此需要更快的磁盘和更大的内存；</p>
+<p>‘文件服务器需要存储大量用户上传的文件，因此需要更大的硬盘。</p>
+<p>文件访问是很消耗服务器资源的（因为会涉及到操作系统的上下文切换和磁盘I/O操作）；独立存储，更方便做扩容、容灾和数据迁移；方便做访问请求的负载均衡，方便应用各种缓存策略），也更加方便迁移到CDN。</p>
+<p>早期数据量和访问量较小，可以采用emc等公司的NAS存储，但随着访问量增加，网络的瓶颈，扩容的压力和成本，运维的成本都将很高，单机存在性能瓶颈，容灾、垂直扩展性稍差，这些缺点导致集中式存储已经无法支撑业务的需要。</p>
+<p>2.分布式存储  </p>
+<p>业务继续发展，单独单台的服务器存储和响应也很快到达了瓶颈，新的业务要求，文件访问高响应性，高可用性来响应业务对系统的要求。分布式文件系统，一般分为三块内容来配合，服务的存储、访问的仲裁系统，文件存储系统，文件的容灾系统来构成，总裁系统相当于文件服务器的大脑，根据一定的算法来决定文件存储的位置，文件存储系统负责报错文件，容灾系统负责文件系统和自己的相互备份。</p>
+<p>可以通过分布式的方案，灵活的扩充，通过廉价的PC，就可以灵活增加存储，并且因为分布式的特点，硬件扩充的过程，不仅仅是存储的增加，而且网络流量的增加，访问量的增加都是同步解决了。 </p>
+<p>扩展能力: 毫无疑问，扩展能力是一个分布式文件系统最重要的特点；</p>
+<p>高可用性: 在分布式文件系统中，高可用性包含两层，一是整个文件系统的可用性，二是数据的完整和一致性；</p>
+<p>弹性存储: 可以根据业务需要灵活地增加或缩减数据存储以及增删存储池中的资源，而不需要中断系统运行</p>
+<p>目前主流的分布式文件系统由hadoop文件系统（hdfs），但hdfs对于小文件的存储浪费空间比较严重。并不适合互联网的文件存储场景（从几k到几G的文件都有）。因为很多大型互联网公司基于google GFS轻量级分布式文件系统的原理，形成自有的分布式文件系统。</p>
+<h3 id="分布式文件系统"><a href="#分布式文件系统" class="headerlink" title="分布式文件系统"></a>分布式文件系统</h3><p>常见的分布式文件系统有FastDFS，GFS、HDFS、Ceph 、GridFS 、mogileFS、TFS等。各自适用于不同的领域。它们都不是系统级的分布式文件系统，而是应用级的分布式文件存储服务。</p>
+<h3 id="FastDfs"><a href="#FastDfs" class="headerlink" title="FastDfs"></a>FastDfs</h3><p>FastDFS是一个开源的轻量级分布式文件系统。它解决了大数据量存储和负载均衡等问题。特别适合以中小文件（建议范围：4KB &lt; file_size &lt;500MB）为载体的在线服务，如相册网站、视频网站等等。在UC基于FastDFS开发向用户提供了：网盘，社区，广告和应用下载等业务的存储服务。</p>
+<p>FastDFS服务端有两个角色：跟踪器（tracker）和存储节点（storage）。</p>
+<p>跟踪器主要做调度工作，在访问上起负载均衡的作用。</p>
+<p>存储节点存储文件，完成文件管理的所有功能：存储、同步和提供存取接口，FastDFS同时对文件的metadata进行管理。所谓文件的meta data就是文件的相关属性，以键值对（key valuepair）方式表示，如：width=1024，其中的key为width，value为1024。文件metadata是文件属性列表，可以包含多个键值对。</p>
+]]></content>
       <categories>
         <category>技术</category>
       </categories>
@@ -12,44 +50,6 @@
         <tag>FastDfs</tag>
         <tag>Java</tag>
         <tag>Spring</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Hello Hexo</title>
-    <url>/2020/01/03/Hello-Hexo/</url>
-    <content><![CDATA[<p>Nice to meet you!</p>
-<h2 id="Hello-Hexo"><a href="#Hello-Hexo" class="headerlink" title="Hello Hexo"></a>Hello Hexo</h2>]]></content>
-      <categories>
-        <category>其他</category>
-      </categories>
-      <tags>
-        <tag>世界</tag>
-        <tag>起点</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Hello World</title>
-    <url>/2020/01/01/hello-world/</url>
-    <content><![CDATA[<p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html" target="_blank" rel="noopener">Deployment</a></p>
-]]></content>
-      <categories>
-        <category>其他</category>
-      </categories>
-      <tags>
-        <tag>世界</tag>
-        <tag>Hexo</tag>
       </tags>
   </entry>
 </search>
